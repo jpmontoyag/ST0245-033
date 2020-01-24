@@ -26,7 +26,7 @@ private double x, y;
     }
 
     public double anguloPolar() {
-      double angulo = Math.atan(y/x);
+      double angulo = Math.atan(getY()/getX());
       System.out.println("Angulo: "+angulo+"°");
       return angulo;
     }
