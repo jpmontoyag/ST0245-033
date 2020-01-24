@@ -15,9 +15,7 @@ private double x, y;
 
     public double getY() {
       return y;
-
     }
-
 
     public double radioPolar() {
       double radio = Math.sqrt(Math.pow(getX(), 2)+Math.pow(getY(), 2));
@@ -26,7 +24,7 @@ private double x, y;
     }
 
     public double anguloPolar() {
-      double angulo = Math.atan(getY()/getX());
+      double angulo = ((Math.atan(getY()/getX()))*180)/3.1416;
       System.out.println("Angulo: "+angulo+"°");
       return angulo;
     }
@@ -34,7 +32,10 @@ private double x, y;
 
 
     public double distanciaEuclidiana(Punto otro) {
-      double radio = Math.sqrt(Math.pow(otro.getX(), 2)+Math.pow(otro.getY(), 2));
+      double aux_x = otro.getX()-getX(); 
+      double aux_y = otro.getY()-getY(); 
+
+      double radio = Math.sqrt(Math.pow(aux_x, 2)+Math.pow(aux_y, 2));
       System.out.println("Distancia ("+getX()+","+getY()+")-("+otro.getX()+","+otro.getY()+"): \n"+radio+" cm");
       return radio;
     }
@@ -43,8 +44,8 @@ private double x, y;
 
 class Main {
 
-  static Punto obj = new Punto(15, 69);
-  static Punto obj2 = new Punto(30, 120);
+  static Punto obj = new Punto(2, 2);
+  static Punto obj2 = new Punto(3, 3);
 
   public static void main(String[] args) {
 
